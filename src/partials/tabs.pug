@@ -1,0 +1,141 @@
+.tabs__wrap
+    .container
+        .tabs__btns
+            a(href="#").tabs__btn.tabs__btn_active
+                span.flaticon-interface
+                |Подать заявку
+            a(href="#").tabs__btn
+                span.flaticon-palm-trees
+                |Выбрать тур
+    ul.tabs
+      li.tab.tab_active
+        .container
+            form.steps
+              .step
+                .step__inner
+                  h2.title
+                    span ШАГ 01
+                  fieldset
+                    p.steps__desc Где хотите отдохнуть?
+                    .steps__options
+                      .steps__option
+                        input.steps__option-radio(type="radio" name="where" id="dominikana")
+                        label(for="dominikana") Доминикана
+                      .steps__option
+                        input.steps__option-radio(type="radio" name="where" id="turkey")
+                        label(for="turkey") Турция
+                      .steps__option
+                        input.steps__option-radio(type="radio" name="where" id="vietnam")
+                        label(for="vietnam") Вьетная
+                      .steps__option
+                        input.steps__option-radio(type="radio" name="where" id="tunis")
+                        label(for="tunis") Тунис
+                      .steps__option
+                        input.steps__option-radio(type="radio" name="where" id="maldivy")
+                        label(for="maldivy") Мальдивы
+                      .steps__option
+                        input.steps__option-radio(type="radio" name="where" id="cuba")
+                        label(for="cuba") Куба
+                      .steps__option
+                        input.steps__option-radio(type="radio" name="where" id="thai")
+                        label(for="thai") Тайланд
+                      .steps__option
+                        input.steps__option-radio(type="radio" name="where" id="cyprus")
+                        label(for="cyprus") Кипр
+                      .steps__option
+                        input.steps__option-radio(type="radio" name="where" id="mexica")
+                        label(for="mexica") Мексика
+                      .steps__option.steps__option-radio_other
+                        input.steps__option-radio(type="radio" name="where" id="other")
+                        label(for="other") Другое
+                      
+              .step
+                .step__inner.step_2
+                  h2.title 
+                    span ШАГ 02
+                  fieldset
+                    p.steps__desc Когда планируете отдых
+                    label(for="date") Дата вылета
+                    .step__row
+                      input(type="date" id="date" name="date" placeholder="01.01.2018")
+                      span.step__span.step__span_mr +/- 3 дня
+                      span.step__span На
+                      select(name="country").step__select
+                          option 1
+                          option 2
+                          option 3
+                          option 4
+                          option 5
+                          option 6
+                          option 7
+                          option 8
+                          option 9
+                          option 10
+                          option 11
+                          option 12
+                          option 13
+                          option 14
+                      span.step__span Ночей
+                        
+              .step
+                .step__inner
+                  h2.title 
+                    span ШАГ 03
+                  fieldset
+                    p.steps__desc Сколько людей
+                    .steps__persons
+                      .steps__humans
+                        input.steps__human(type="radio" name="humans" id="human1")
+                        label(for="human1")
+                        input.steps__human(type="radio" name="humans" id="human2" checked)
+                        label(for="human2")
+                        input.steps__human(type="radio" name="humans" id="human3")
+                        label(for="human3")
+                        input.steps__human(type="radio" name="humans" id="human4")
+                        label(for="human4")
+                      .steps__childs
+                        input.steps__human(type="radio" name="childs" id="child1")
+                        label(for="child1")
+                        input.steps__human(type="radio" name="childs" id="child2" checked)
+                        label(for="child2")
+                        input.steps__human(type="radio" name="childs" id="child3")
+                        label(for="child3")
+                        input.steps__human(type="radio" name="childs" id="child4")
+                        label(for="child4")
+              .step
+                .step__inner.step_4
+                  h2.title 
+                    span ШАГ 04
+                  fieldset
+                    p.steps__desc Ориентировочный бюджет
+                    input(type='range' min="50000" max="3000000" value="200000" name="curr" id="curr")
+                    .range__current 200000
+                    .range__left  50 000
+                    .range__right 3 000 000
+                  
+              .step
+                .step__inner.step_5
+                  h2.title 
+                    span ШАГ 05
+                  fieldset
+                    p.steps__desc Откуда вылетаете
+                    select(name="from").step__select.step__select_from
+                        option Москва
+                        option Санкт-Петербург
+                    input.steps__option-checkbox(type="checkbox" name="dontknow" id="dontknow")
+                    label(for="dontknow") Пока не знаю
+                    
+              .step
+                .step__inner
+                  h2.title 
+                    span ШАГ 06
+                  fieldset
+                    .step__textfields
+                      textarea.steps__textarea(placeholder='Ваш комментарий' name="comment" id="comment")
+                      input(type="tel" placeholder="Ваш телефон" name="tel" id="tel")
+                      input(type="submit" value="Подать заявку") 
+                  
+                      
+      li.tab
+          .container
+            | TAB 2 CONTENT HERE

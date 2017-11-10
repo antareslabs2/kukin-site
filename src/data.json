@@ -1,0 +1,37 @@
+{
+  "h1": "Дмитрий Кукин",
+  "title": "Ваш личный помощник в выборе и покупке идеального тура",
+  "menu": [
+    {
+      "title": "Почему я",
+      "href": "#"
+    },
+    {
+      "title": "Моя цель",
+      "href": "#"
+    },
+    {
+      "title": "Дополнительные услуги",
+      "href": "#"
+    },
+    {
+      "title": "Акции",
+      "href": "#"
+    },
+    {
+      "title": "Отдыхать бесплатно",
+      "href": "#"
+    }
+  ],
+  "socials": {
+    "in": "https://www.instagram.com/",
+    "vk": "https://www.vk.com/",
+    "fb": "https://facebook.com/",
+    "tel": {
+      "title": "+7 904 551-66-24",
+      "href": "+79045516624"
+    },
+    "wu": "https://api.whatsapp.com/send?phone=yournum",
+    "vi": "https://www.viber.com/ru/"
+  }
+}

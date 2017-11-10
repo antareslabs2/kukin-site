@@ -1,0 +1,38 @@
+header.header
+    a.header__brandnig(href="/")
+        img(src="images/branding.jpg" alt="logo" title="logo").header__branding-img
+
+    .header__main
+        .header__top
+            h1.header__title=h1
+            p.header__subtitle= title
+        nav.header__nav
+            ul.header__menu
+                each item in menu
+                        li.header__menu-item
+                            a(href=item.href).header__menu-link= item.title
+
+    .header__socials
+        .header__socials-top
+            a(href="#" target="_blank").header__btn.header__btn_login Войти
+            a(href=socials.in target="_blank").header__btn.header__btn_in
+                span.flaticon-instagram-logo
+                | Instagram
+            a(href=socials.vk target="_blank").header__btn.header__btn_vk
+                span.flaticon-vk-social-network-logo
+                | VK
+            a(href=socials.fb target="_blank").header__btn.header__btn_fb
+                span.flaticon-facebook-logo
+                | Facebook
+        a(href="tel:" + socials.tel.href).header__tel= socials.tel.title
+
+        .header__socials-external
+            span.header__socials-text связаться через
+            a(href=socials.wu target="_blank").header__btn.header__btn_wu.header__btn_external
+                span.flaticon-whatsapp-logo
+                | WhatsApp
+            a(href=socials.vi target="_blank").header__btn.header__btn_vi.header__btn_external
+                span.flaticon-viber
+                | Viber
+
+

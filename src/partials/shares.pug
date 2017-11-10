@@ -1,0 +1,83 @@
+.shares(style="background-image: url('images/bg.jpg')")
+    .container
+        h2.title
+            span Акции
+
+
+        .shares__filters
+            select(name="country").shares__select
+                option Россия
+                option Украина
+                option Белоруссия
+            .shares__filter
+                input(type="radio" name="filter" id="estab" checked)
+                label(for="estab") Заведения
+            .shares__filter
+                input(type="radio" name="filter" id="rest")
+                label(for="rest") Рестораны
+            .shares__filter
+                input(type="radio" name="filter" id="services")
+                label(for="services") Услуги
+            .shares__filter
+                input(type="radio" name="filter" id="kitchen")
+                label(for="kitchen") Кухня
+            .shares__filter
+                input(type="radio" name="filter" id="shop")
+                label(for="shop") Магазины
+            .shares__filter
+                input(type="radio" name="filter" id="excursions")
+                label(for="excursions") Экскурсии
+            .shares__filter
+                input(type="radio" name="filter" id="health")
+                label(for="health") Здоровье
+
+    .container
+        ul.shares__list
+            li.card(data-country="Россия" data-type="estab, kitchen, shop")
+                a.card__link
+                    span.card__price 499$
+                    .card__image
+                        img(src="images/1.jpg")
+                    .card__desc
+                        .catd__desc-text Стоимость символической свадебной  церемонии "Рай для влюбленных"
+                    span.card__btn Посмотреть
+            li.card(data-country="Россия, Украина, Белоруссия" data-type="estab, rest, services, kitchen, shop, excursions, health")
+                a.card__link
+                    span.card__price 499$
+                    .card__image
+                        img(src="images/2.jpg")
+                    .card__desc
+                        .catd__desc-text Стоимость символической свадебной  церемонии "Рай для влюбленных"
+                    span.card__btn Посмотреть
+            li.card(data-country="Россия, Украина" data-type="estab, kitchen")
+                a.card__link
+                    span.card__price 499$
+                    .card__image
+                        img(src="images/3.jpg")
+                    .card__desc
+                        .catd__desc-text Стоимость символической свадебной  церемонии "Рай для влюбленных"
+                    span.card__btn Посмотреть
+            li.card(data-country="Россия" data-type="estab, kitchen")
+                a.card__link
+                    span.card__price 499$
+                    .card__image
+                        img(src="images/4.jpg")
+                    .card__desc
+                        .catd__desc-text Стоимость символической свадебной  церемонии "Рай для влюбленных"
+                    span.card__btn Посмотреть
+            li.card(data-country="Россия" data-type="estab, kitchen")
+                a.card__link
+                    span.card__price 499$
+                    .card__image
+                        img(src="images/1.jpg")
+                    .card__desc
+                        .catd__desc-text ЕЩЕ
+                    span.card__btn Посмотреть
+            li.card(data-country="Россия" data-type="estab, kitchen")
+                a.card__link
+                    span.card__price 499$
+                    .card__image
+                        img(src="images/1.jpg")
+                    .card__desc
+                        .catd__desc-text ЕЩЕ
+                    span.card__btn Посмотреть

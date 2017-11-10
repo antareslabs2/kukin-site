@@ -1,0 +1,17 @@
+.title {
+  text-align: center;
+  color: #fff;
+  font-size: scut-em(20);
+  text-transform: uppercase;
+  padding: scut-em(91 0 31, 20);
+  margin: 0;
+
+  span {
+    &:before,
+    &:after {
+      margin: 0 scut-em(16);
+      content: '•';
+      font-size: scut-em(16, 20);
+    }
+  }
+}
