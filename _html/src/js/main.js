@@ -1,8 +1,9 @@
 import jQuery from "jquery";
 window.jQuery = jQuery;
 import "slick-carousel";
+import PerfectScrollbar from 'perfect-scrollbar';
 
-(function($) {
+(function ($) {
   require("selectric")();
   require("rangeslider.js");
 
@@ -33,7 +34,7 @@ import "slick-carousel";
       } else {
         btns.removeClass("tabs__btn_active");
         $(evt.target).addClass("tabs__btn_active");
-        tabs.stop().slideUp("fast", function() {
+        tabs.stop().slideUp("fast", function () {
           tabs.eq($(evt.target).index()).slideDown("fast");
         });
       }
@@ -48,7 +49,7 @@ import "slick-carousel";
       const country = wrapper.find(".selectric .label").text();
       const category = wrapper.find("input:checked").attr("id");
 
-      slider.slick("slickUnfilter").slick("slickFilter", function(i, val) {
+      slider.slick("slickUnfilter").slick("slickFilter", function (i, val) {
         return (
           $(val)
             .attr("data-country")
@@ -100,7 +101,7 @@ import "slick-carousel";
   function stepsIt(form) {
     var slidesCount = form.find(".step").length;
     form
-      .on("init", function() {
+      .on("init", function () {
         form.append('<div class="slick-ui"></div>');
         form
           .find(".slick-prev")
@@ -109,7 +110,7 @@ import "slick-carousel";
         form.find(".slick-dots").appendTo(form.find(".slick-ui"));
         form.find(".slick-next").appendTo(form.find(".slick-ui"));
       })
-      .on("beforeChange", function(event, slick, currentSlide, nextSlide) {
+      .on("beforeChange", function (event, slick, currentSlide, nextSlide) {
         if (nextSlide === 0) {
           form.find(".slick-prev").css("opacity", 0);
           form.find(".slick-next").css("opacity", 1);
@@ -137,7 +138,7 @@ import "slick-carousel";
     verticalClass: "rangeslider--vertical",
     fillClass: "rangeslider__fill",
     handleClass: "rangeslider__handle",
-    onSlide: function(position, value) {
+    onSlide: function (position, value) {
       $(".range__current").text(value);
     }
   });
@@ -146,4 +147,5 @@ import "slick-carousel";
   tabsIt($(".tabs__wrap"));
   filterIt($(".shares"));
   stepsIt($(".steps"));
+  new PerfectScrollbar('.content__scrollable');
 })(jQuery);

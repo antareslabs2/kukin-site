@@ -1,23 +1,22 @@
-import gulp from 'gulp'
-import fs from 'fs'
-import browserify from 'browserify'
-import babelify from 'babelify'
-import source from 'vinyl-source-stream'
-import buffer from 'vinyl-buffer'
-import uglify from 'gulp-uglify'
-import sourcemaps from 'gulp-sourcemaps'
-import browserSync from 'browser-sync'
-import pug from 'gulp-pug'
-import sass from 'gulp-sass'
-import svgSprite from 'gulp-svg-sprite'
-import postcss from 'gulp-postcss'
-import autoprefixer from 'autoprefixer'
-import bourbon from 'bourbon'
-import sassGlob from 'gulp-sass-glob'
-import watch from 'gulp-watch'
-import plumber from 'gulp-plumber'
-import imagemin from 'gulp-imagemin'
-import eslint from 'gulp-eslint'
+var gulp = require('gulp');
+var fs = require('fs');
+var browserify = require('browserify');
+var babelify = require('babelify');
+var source = require('vinyl-source-stream');
+var buffer = require('vinyl-buffer');
+var uglify = require('gulp-uglify');
+var sourcemaps = require('gulp-sourcemaps');
+var browserSync = require('browser-sync');
+var pug = require('gulp-pug');
+var sass = require('gulp-sass');
+var svgSprite = require('gulp-svg-sprite');
+var postcss = require('gulp-postcss');
+var autoprefixer = require('autoprefixer');
+var bourbon = require('bourbon');
+var sassGlob = require('gulp-sass-glob');
+var watch = require('gulp-watch');
+var plumber = require('gulp-plumber');
+var imagemin = require('gulp-imagemin');
 
 browserSync.create()
 
@@ -38,17 +37,18 @@ const sassConfig = {
   includePaths: bourbon.includePaths
 }
 
-gulp.task('images', () => 
+gulp.task('images', () =>
   gulp.src('src/images/*.{jpg,png,gif}')
     .pipe(plumber())
     .pipe(imagemin())
     .pipe(gulp.dest('dist/images'))
 )
 
-gulp.task('pug', () => 
+gulp.task('pug', () =>
   gulp.src('src/*.pug')
     .pipe(plumber())
     .pipe(pug({
+      pretty: true,
       data: JSON.parse(fs.readFileSync('./src/data.json'))
     }))
     .pipe(gulp.dest('./dist'))
@@ -59,13 +59,7 @@ gulp.task('pug-watch', ['pug'], (done) => {
   done()
 })
 
-gulp.task('lint', () => 
-  gulp.src('src/js/main.js')
-    .pipe(eslint())
-    .pipe(eslint.format())
-)
-
-gulp.task('js', ['lint'], () => 
+gulp.task('js', () =>
   browserify({ entries: './src/js/main.js', debug: true })
     .transform("babelify", { presets: ["es2015"] })
     .bundle()
@@ -79,7 +73,7 @@ gulp.task('js', ['lint'], () =>
     .pipe(browserSync.stream())
 )
 
-gulp.task('sass', () => 
+gulp.task('sass', () =>
   gulp.src("src/scss/main.scss")
     .pipe(plumber())
     .pipe(sassGlob())
@@ -89,7 +83,7 @@ gulp.task('sass', () =>
     .pipe(browserSync.stream())
 )
 
-gulp.task('svg', () => 
+gulp.task('svg', () =>
   gulp.src('src/svg/**/*.svg')
     .pipe(plumber())
     .pipe(svgSprite(svgConfig))
@@ -117,7 +111,7 @@ gulp.task('default', ['pug', 'js', 'sass', 'svg', 'images', 'serve'])
 //Production
 gulp.task('prod', ['sitemap', 'js:prod', 'sass:prod', 'svg', 'images'])
 
-gulp.task('js:prod', () => 
+gulp.task('js:prod', () =>
   browserify({ entries: './src/js/main.js', debug: false })
     .transform("babelify", { presets: ["es2015"] })
     .bundle()
@@ -127,7 +121,7 @@ gulp.task('js:prod', () =>
     .pipe(gulp.dest('./dist/js'))
 )
 
-gulp.task('sass:prod', () => 
+gulp.task('sass:prod', () =>
   gulp.src("src/scss/main.scss")
     .pipe(sassGlob())
     .pipe(sass({
