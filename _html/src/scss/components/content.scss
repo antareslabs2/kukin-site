@@ -4,6 +4,14 @@
     height: 100vh;
     overflow: hidden;
     padding: scut-em(208) 0 scut-em(40);
+
+    @media (max-width: 1180px) {
+        padding: 250px 0 20px;
+    }
+
+    @media (max-width: 769px) {
+        height: auto;
+    }
 }
 
 .content__inner {
@@ -14,6 +22,16 @@
     background-color: #fff;
     height: calc(100vh - #{scut-em(248)});
     overflow: auto;
+
+    @media (max-width: 1180px) {
+        height: calc(100vh - 290px);
+        width: 85%;
+    }
+
+    @media (max-width: 769px) {
+        width: 95%;
+        height: auto;
+    }
 
     h1, h2, h3, h3, h4, h5, h6 {
         font-weight: 400;
@@ -51,6 +69,18 @@
     height: 100%;
     overflow: auto;
     padding: 0 scut-em(135);
+
+    @media (max-width: 1500px) {
+        padding: 0 scut-em(60); 
+    } 
+
+    @media (max-width: 768px) {
+        padding: 0 scut-em(30); 
+    }
+
+    @media (max-width: 550px) {
+        padding: 0 scut-em(10); 
+    }
 }
 
 .ps__rail-y {
@@ -64,6 +94,10 @@
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
+
+    @media (max-width: 650px) {
+        display: block;
+    }
 }
 
 .icon {
@@ -74,6 +108,16 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
+
+    @media (max-width: 650px) {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    @media (max-width: 550px) {
+        flex-direction: column;
+        align-items: center;
+    }
 
     .icon__title {
         text-align: left;
@@ -105,6 +149,16 @@
     background-color: lightgrey;
     transition: 0.2s;
 
+    @media (max-width: 1180px) {
+        width: scut-em(80);
+        min-width: scut-em(80);
+        height: scut-em(80);
+    }
+
+    @media (max-width: 550px) {
+        margin-bottom: scut-em(25);
+    }
+
     svg {
         width: 65%;
         height: 65%;
@@ -117,6 +171,15 @@
 
 .icon__content {
     max-width: calc(100% - #{scut-em(140)});
+
+    @media (max-width: 1180px) {
+        max-width: calc(100% - #{scut-em(100)});
+    }
+
+    @media (max-width: 650px) {
+        width: 100%;
+        max-width: 100%;
+    }
 
     p {
         margin-bottom: scut-em(7);
